@@ -9,4 +9,4 @@ main:$(obj) #$@:obj file name $<:depended file name
 
 .PHONY: clean
 clean:
-	del *.o *.exe main
+	rm *.o *.exe main

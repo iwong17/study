@@ -98,5 +98,39 @@ student *deletelb(student *head,char *num)
     return head;
 }
 
+student *insertlb(student *head,char *num,student *node)
+{
+    student *curr;
+    int insertnum = 0;
+    if(head == NULL)
+    {
+        head = node;
+        node->next = NULL;
+        n +=1;
+        return head;
+    }
+    else
+    {
+        curr = head;
+        while(curr != NULL)
+        {
+            if(strcmp(curr->num,num) == 0)
+            {
+                node->next = curr->next;
+                curr->next = node;
+                n +=1;
+                insertnum++;
+                curr = node->next;
+            }
+            else
+            {
+                curr = curr->next;
+            }
+        }
+    }
+    printf("insert %d\n",insertnum);
+    return head;
+}
+
 
 

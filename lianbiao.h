@@ -12,5 +12,6 @@ typedef struct STUDENT
 student *creatlb();
 void printflb(student *head);
 student *deletelb(student *head,char *num);
+student *insertlb(student *head,char *num,student *node);
 
 #endif
