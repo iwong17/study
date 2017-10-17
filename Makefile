@@ -1,18 +1,12 @@
-src := $(shell ls *.c)
-obj := $(patsubst %.c,%.o,$(src))
+#src := $(shell ls *.c)
+#obj := $(patsubst %.c,%.o,$(src))
+obj = main.o lianbiao.o sort.o
 
-main : $(obj)
-	gcc -g -o $@ $^
-#main.o : lianbiao.h sort.h
-#lianbiao.o : lianbiao.h
-
-	#gcc -g -o main main.c lianbiao.c sort.c
-	#gcc -c lianbiao.c
-	#gcc -c sort.c
-%.o:%.c
-	gcc -c -o $@ $<
-
+main:$(obj) #$@:obj file name $<:depended file name
+	gcc -g -o $@ $^  
+%.o:%.c     #$<:first depended file name
+	gcc -c -o $@ $<  
 
 .PHONY: clean
 clean:
-	rm *.o main
+	del *.o *.exe main
